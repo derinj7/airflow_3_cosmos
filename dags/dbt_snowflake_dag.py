@@ -19,7 +19,7 @@ profile_config = ProfileConfig(
 
 dbt_snowflake_dag = DbtDag(
     project_config=ProjectConfig(
-        dbt_project_path="/usr/local/airflow/dags/dbt/snowflake_demo",
+        dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
     ),
     profile_config=profile_config,
     execution_config=ExecutionConfig(

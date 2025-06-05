@@ -37,7 +37,7 @@ with DAG(
     dbt_example_models = DbtTaskGroup(
         group_id="transform_example_data",
         project_config=ProjectConfig(
-            dbt_project_path="/usr/local/airflow/dags/dbt/snowflake_demo",
+            dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
         ),
         profile_config=profile_config,
         execution_config=ExecutionConfig(
@@ -52,7 +52,7 @@ with DAG(
     dbt_staging_models = DbtTaskGroup(
         group_id="transform_staging_data",
         project_config=ProjectConfig(
-            dbt_project_path="/usr/local/airflow/dags/dbt/snowflake_demo",
+            dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
         ),
         profile_config=profile_config,
         execution_config=ExecutionConfig(
