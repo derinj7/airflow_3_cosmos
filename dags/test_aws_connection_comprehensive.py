@@ -49,7 +49,7 @@ with DAG(
         return "Connection test complete"
 
 
-    @task
+    @task(trigger_rule="all_done")
     def test_sqs_access():
         """Test SQS access specifically"""
         from airflow.providers.amazon.aws.hooks.sqs import SqsHook
