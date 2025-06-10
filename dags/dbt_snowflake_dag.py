@@ -29,6 +29,7 @@ execution_config = ExecutionConfig(
 project_config = ProjectConfig(
     dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
     manifest_path="/usr/local/airflow/dbt/snowflake_demo/target/manifest.json",
+    install_dbt_deps=False,
 )
 
 dbt_snowflake_dag = DbtDag(
