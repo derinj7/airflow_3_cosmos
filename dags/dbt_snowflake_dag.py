@@ -15,10 +15,9 @@ profile_config = ProfileConfig(
     )
 )
 
-# Use the manifest.json generated in CI/CD
+# Configure to use manifest
 render_config = RenderConfig(
     load_method=LoadMode.DBT_MANIFEST,
-    manifest_path="/usr/local/airflow/dbt/snowflake_demo/target/manifest.json",
 )
 
 # Configure to use the virtual environment
@@ -26,10 +25,14 @@ execution_config = ExecutionConfig(
     dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
 )
 
+# Project config with manifest path
+project_config = ProjectConfig(
+    dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
+    manifest_path="/usr/local/airflow/dbt/snowflake_demo/target/manifest.json",
+)
+
 dbt_snowflake_dag = DbtDag(
-    project_config=ProjectConfig(
-        dbt_project_path="/usr/local/airflow/dbt/snowflake_demo",
-    ),
+    project_config=project_config,
     profile_config=profile_config,
     execution_config=execution_config,
     render_config=render_config,
