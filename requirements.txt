@@ -3,5 +3,6 @@ astronomer-cosmos
 apache-airflow-providers-snowflake==6.2.2
 apache-airflow-providers-common-messaging==1.0.2
 apache-airflow-providers-amazon
+dbt-snowflake==1.9.4
 
 #comment to trigger the image only deploy
