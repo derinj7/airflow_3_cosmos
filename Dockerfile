@@ -5,14 +5,14 @@ RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
     pip install --no-cache-dir dbt-snowflake==1.9.4
 
 # Copy dbt project files
-COPY dbt/warehouse /usr/local/airflow/dbt/snowflake_demo
+COPY dbt/snowflake_demo /usr/local/airflow/dbt/snowflake_demo
 
 # Set working directory for dbt operations
 WORKDIR /usr/local/airflow/dbt/snowflake_demo
 
 # Create profiles.yml and generate manifest in one step
 RUN mkdir -p ~/.dbt && \
-    echo 'warehouse:' > ~/.dbt/profiles.yml && \
+    echo 'snowflake_demo:' > ~/.dbt/profiles.yml && \
     echo '  target: dev' >> ~/.dbt/profiles.yml && \
     echo '  outputs:' >> ~/.dbt/profiles.yml && \
     echo '    dev:' >> ~/.dbt/profiles.yml && \
@@ -21,7 +21,7 @@ RUN mkdir -p ~/.dbt && \
     echo '      user: dummy' >> ~/.dbt/profiles.yml && \
     echo '      password: dummy' >> ~/.dbt/profiles.yml && \
     echo '      role: dummy' >> ~/.dbt/profiles.yml && \
-    echo '      warehouse: dummy' >> ~/.dbt/profiles.yml && \
+    echo '      snowflake_demo: dummy' >> ~/.dbt/profiles.yml && \
     echo '      database: dummy' >> ~/.dbt/profiles.yml && \
     echo '      schema: dummy' >> ~/.dbt/profiles.yml && \
     echo '      threads: 4' >> ~/.dbt/profiles.yml && \
