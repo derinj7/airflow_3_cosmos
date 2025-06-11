@@ -18,6 +18,7 @@ profile_config = ProfileConfig(
 # Configure to use manifest
 render_config = RenderConfig(
     load_method=LoadMode.DBT_MANIFEST,
+    select=["tag:example_models"]  # Select only models with example_models tag
 )
 
 # Configure to use the virtual environment
