@@ -53,6 +53,8 @@ def example_astronauts():
             r.raise_for_status()
             number_of_people_in_space = r.json()["number"]
             list_of_people_in_space = r.json()["people"]
+            snowflake_private_key_content = "{{ var.value.snowflake_private_key }}"
+            print(snowflake_private_key_content)
         except Exception:
             print("API currently not available, using hardcoded data instead.")
             number_of_people_in_space = 12
